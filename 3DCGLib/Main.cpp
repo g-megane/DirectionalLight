@@ -10,8 +10,8 @@
 
 using namespace Lib;
 
-const float FPS = 60.0f;    // 実行したいfps
-const float SPEED = 0.001f; // ライトの移動速度
+const float FPS = 60.0f;     // 実行したいfps
+const float SPEED = 1800.0f; // モデルの移動速度
 
 int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
@@ -92,16 +92,16 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 
         // 回転
         if (w->getKeyDown('W')) {
-            rotX += MyMath::PIDIV2 / 1800.0f * deltaTime;
+            rotX += MyMath::PIDIV2 / SPEED * deltaTime;
         }
         if (w->getKeyDown('S')) {
-            rotX -= MyMath::PIDIV2 / 1800.0f * deltaTime;
+            rotX -= MyMath::PIDIV2 / SPEED * deltaTime;
         }
         if (w->getKeyDown('A')) {
-            rotY += MyMath::PIDIV2 / 1800.0f * deltaTime;
+            rotY += MyMath::PIDIV2 / SPEED * deltaTime;
         }
         if (w->getKeyDown('D')) {
-            rotY -= MyMath::PIDIV2 / 1800.0f * deltaTime;
+            rotY -= MyMath::PIDIV2 / SPEED * deltaTime;
         }
 
         // オーバーフローの制御
